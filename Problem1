@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package projecteulerproblem1;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ZSullivan
+ */
+public class ProjectEulerProblem1 {
+
+    public static void main(String[] args) {
+        int ceiling = GetNumberFromUser();
+        int sumOfThreeAndFive = GetSumOfMultiplesThreesAndFives(ceiling);
+        System.out.println(sumOfThreeAndFive);
+    }
+
+    private static int GetSumOfMultiplesThreesAndFives(int ceiling) {
+        int sum = 0;
+        for (int i = 0; i < ceiling; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+    private static int GetNumberFromUser() {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("What number would you like to make your ceiling?");
+        int ceiling = userInput.nextInt();
+        return ceiling;
+    }
+}
